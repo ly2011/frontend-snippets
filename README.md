@@ -1,193 +1,181 @@
-# Vue VSCode Snippets
+# Vue 2 Snippets for Visual Studio Code
 
-![vue-snippet-hero](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-snippet-hero.gif)
+This extension adds Vue 2 Code Snippets into Visual Studio Code.
 
-## Description
+这个插件基于最新的 Vue 2 的 API 添加了Code Snippets。
 
-These snippets were built to supercharge a workflow in the most seamless manner possible.
+[![](https://vsmarketplacebadge.apphb.com/version/win.frontend-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=win.frontend-snippets)
+[![](https://vsmarketplacebadge.apphb.com/installs/win.frontend-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=win.frontend-snippets)
 
-This repo was built particularly for real world use. It doesn't catalogue the API definitions, rather, it focuses on developer ergonomics from the point of Vue of real world use. Included are the pieces I personally get sick of typing, and boilerplate that is helpful to stub out quickly.
 
-_Versions Supported: Vue 2 and Vue 3_
+### It looks like:
+![](https://raw.githubusercontent.com/ly2011/frontend-snippets/master/img/show1.png)
 
-![SnippetDemo](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/SnippetDemo.gif)
+![](https://raw.githubusercontent.com/ly2011/frontend-snippets/master/img/show2.png)
 
-## Installation
 
-_Either_
+### Snippets
+Including most of the API of Vue.js 2. You can type `vcom`, choose `VueConfigOptionMergeStrategies`, and press ENTER, then `Vue.config.optionMergeStrategies` appear on the screen.
 
-- click the extensions button (lowest square icon in the editor), and type in Vue VSCode Snippets, select the one by win
+插件的 Snippets 如下表格所示，比如你可以键入 `vcom` 然后按上下键选中 `VueConfigOptionMergeStrategies` 再按Enter键，就输入了`Vue.config.optionMergeStrategies`了。
 
-_or_
+As shown in the table below, snippet `vmData` has body like `${this, vm}.$data` will provides choice `this.$data` and `vm.$data` to you.
 
-- go here [vscode Extensions Marketplace](https://marketplace.visualstudio.com/items?itemName=win.frontend-snippets)
+如下表所示，`vmData` 的内容是 `${this, vm}.$data`，这表明这个 snippet 会提供 `this.$data` and `vm.$data` 两种选项供你选择。
 
-```javascript
-ext install Vue VSCode Snippets
-```
+| Prefix | JavaScript Snippet Content |
+| ------ | ------------ |
+| `import` | `import ... from ...` |
+| `newVue` | `new Vue({...})` |
+| `VueConfigSilent` | `Vue.config.silent = true` |
+| `VueConfigOptionMergeStrategies` | `Vue.config.optionMergeStrategies` |
+| `VueConfigDevtools` | `Vue.config.devtools = true` |
+| `VueConfigErrorHandler` | `Vue.config.errorHandler = function (err, vm, info) {...}` |
+| `VueConfigWarnHandler` | `Vue.config.warnHandler = function (msg, vm, trace) {...}` |
+| `VueConfigIgnoredElements` | `Vue.config.ignoredElements = ['']` \
+| `VueConfigKeyCodes` | `Vue.config.keyCodes` |
+| `VueConfigPerformance` | `Vue.config.performance = true` |
+| `VueConfigProductionTip` | `Vue.config.productionTip = false` |
+| `vueExtend` | `Vue.extend( options )` |
+| `VueNextTick` | `Vue.nextTick( callback, [context] )` |
+| `VueNextTickThen` | `Vue.nextTick( callback, [context] ).then(function(){ })` |
+| `VueSet` | `Vue.set( target, key, value )` |
+| `VueDelete` | `Vue.delete( target, key )` |
+| `VueDirective` | `Vue.directive( id, [definition] )` |
+| `VueFilter` | `Vue.filter( id, [definition] )` |
+| `VueComponent` | `Vue.component( id, [definition] )` |
+| `VueUse` | `Vue.use( plugin )` |
+| `VueMixin` | `Vue.mixin({ mixin })` |
+| `VueCompile` | `Vue.compile( template )` |
+| `VueVersion` | `Vue.version` |
+| `data` | `data() { return {} }` |
+| `watchWithOptions` | `key: { deep: true, immediate: true, handler: function () { } }` |
+| `vmData` | `${this, vm}.$data` |
+| `vmProps` | `${this, vm}.$props` |
+| `vmEl` | `${this, vm}.$el` |
+| `vmOptions` | `${this, vm}.$options` |
+| `vmParent` | `${this, vm}.$parent` |
+| `vmRoot` | `${this, vm}.$root` |
+| `vmChildren` | `${this, vm}.$children` |
+| `vmSlots` | `${this, vm}.$slots` |
+| `vmScopedSlots` | `${this, vm}.$scopedSlots.default({})` |
+| `vmRefs` | `${this, vm}.$refs` |
+| `vmIsServer` | `${this, vm}.$isServer` |
+| `vmAttrs` | `${this, vm}.$attrs`|
+| `vmListeners` | `${this, vm}.listeners`|
+| `vmWatch` | `${this, vm}.$watch( expOrFn, callback, [options] )` |
+| `vmSet` | `${this, vm}.$set( object, key, value )` |
+| `vmDelete` | `${this, vm}.$delete( object, key )` |
+| `vmOn` | `${this, vm}.$on( event, callback )` |
+| `vmOnce` | `${this, vm}.$once( event, callback )` |
+| `vmOff` | `${this, vm}.$off( [event, callback] )` |
+| `vmEmit` | `${this, vm}.$emit( event, […args] )` |
+| `vmMount` | `${this, vm}.$mount( [elementOrSelector] )` |
+| `vmForceUpdate` | `${this, vm}.$forceUpdate()` |
+| `vmNextTick` | `${this, vm}.$nextTick( callback )` |
+| `vmDestroy` | `${this, vm}.$destroy()` |
+| `renderer` | `const renderer = require('vue-server-renderer').createRenderer()` |
+| `createRenderer` | `createRenderer({ })` |
+| `preventDefault` | `preventDefault();` |
+| `stopPropagation` | `stopPropagation();` |
 
-You can enable tab completion (recommended) by opening `Code > Preferences > Settings` (on a Mac) and applying `"editor.tabCompletion": "onlySnippets"` to your personal settings
+<br />
 
-## Snippets
+| Prefix | HTML Snippet Content |
+| ------ | ------------ |
+| `template` | `<template></template>` |
+| `script` | `<script></script>` |
+| `style` | `<style></style>` |
+| `vText` | `v-text=msg` |
+| `vHtml` | `v-html=html` |
+| `vShow` | `v-show` |
+| `vIf` | `v-if` |
+| `vElse` | `v-else` |
+| `vElseIf` | `v-else-if` |
+| `vForWithoutKey` | `v-for` |
+| `vFor` | `v-for="" :key=""` |
+| `vOn` | `v-on` |
+| `vBind` | `v-bind` |
+| `vModel` | `v-model` |
+| `vPre` | `v-pre` |
+| `vCloak` | `v-cloak` |
+| `vOnce` | `v-once` |
+| `key` | `:key` |
+| `ref` | `ref`|
+| `slotA` | `slot=""`|
+| `slotE` | `<slot></slot>`|
+| `slotScope` | `slot-scope=""`|
+| `component` | `<component :is=''></component>`|
+| `keepAlive` | `<keep-alive></keep-alive>` |
+| `transition` | `<transition></transition>` |
+| `transitionGroup` | `<transition-group></transition-group>` |
+| `enterClass` | `enter-class=''`|
+| `leaveClass` | `leave-class=''`|
+| `appearClass` | `appear-class=''`|
+| `enterToClass` | `enter-to-class=''`|
+| `leaveToClass` | `leave-to-class=''`|
+| `appearToClass` | `appear-to-class=''`|
+| `enterActiveClass` | `enter-active-class=''`|
+| `leaveActiveClass` | `leave-active-class=''`|
+| `appearActiveClass` | `appear-active-class=''`|
+| `beforeEnterEvent` | `@before-enter=''`|
+| `beforeLeaveEvent` | `@before-leave=''`|
+| `beforeAppearEvent` | `@before-appear=''`|
+| `enterEvent` | `@enter=''`|
+| `leaveEvent` | `@leave=''`|
+| `appearEvent` | `@appear=''`|
+| `afterEnterEvent` | `@after-enter=''`|
+| `afterLeaveEvent` | `@after-leave=''`|
+| `afterAppearEvent` | `@after-appear=''`|
+| `enterCancelledEvent` | `@enter-cancelled=''`|
+| `leaveCancelledEvent` | `@leave-cancelled=''`|
+| `appearCancelledEvent` | `@appear-cancelled=''`|
 
-### Vue
+<br />
 
-| Snippet            | Purpose                                                      |
-| ------------------ | ------------------------------------------------------------ |
-| `vbase`            | Single file component base with SCSS                         |
-| `vbase-3`          | Single File component Composition API with SCSS              |
-| `vbase-3-setup`    | Single File component setup Composition API with SCSS        |
-| `vbase-3-reactive` | Single File component Composition API with Reactive and SCSS |
-| `vbase-css`        | Single file component base with CSS                          |
-| `vbase-pcss`       | Single file component base with PostCSS                      |
-| `vbase-styl`       | Single file component base with Stylus                       |
-| `vbase-ts`         | Single file component base with Typescript                   |
-| `vbase-ts-class`   | Single file component base with Typescript Class Format      |
-| `vbase-3-ts`       | Single File component Composition API with Typescript        |
-| `vbase-3-ts-setup` | Single File component setup Composition API with Typescript  |
-| `vbase-ns`         | Single file component with no styles                         |
-| `vbase-sass`       | Single file component base with SASS                         |
-| `vbase-less`       | Single file component base with LESS                         |
+| Prefix | Vue Router Snippet Content |
+| ------ | ------------ |
+| `routerLink` | `<router-link></router-link>` |
+| `routerView` | `<router-view></router-view>` |
+| `to` | `to=""` |
+| `tag` | `tag=""` |
+| `newVueRouter` | `const router = newVueRouter({ })` |
+| `routerBeforeEach` | `router.beforeEach((to, from, next) => { }` |
+| `routerBeforeResolve` | `router.beforeResolve((to, from, next) => { }` |
+| `routerAfterEach` | `router.afterEach((to, from) => { }` |
+| `routerPush` | `router.push()` |
+| `routerReplace` | `router.replace()` |
+| `routerGo` | `router.back()` |
+| `routerBack` | `router.push()` |
+| `routerForward` | `router.forward()` |
+| `routerGetMatchedComponents` | `router.getMatchedComponents()` |
+| `routerResolve` | `router.resolve()` |
+| `routerAddRoutes` | `router.addRoutes()` |
+| `routerOnReady` | `router.onReady()` |
+| `routerOnError` | `router.onError()` |
+| `routes` | `routes: []` |
+| `beforeEnter` | `beforeEnter: (to, from, next) => { }` |
+| `beforeRouteEnter` | `beforeRouteEnter (to, from, next) { }` |
+| `beforeRouteLeave` | `beforeRouteLeave (to, from, next) { }` |
+| `scrollBehavior` | `scrollBehavior (to, from, savedPosition) { }` |
 
-### Template
+<br />
 
-| Snippet           | Purpose                             |
-| ----------------- | ----------------------------------- |
-| `vfor`            | v-for directive                     |
-| `vmodel`          | Semantic v-model directive          |
-| `vmodel-num`      | Semantic v-model number directive   |
-| `von`             | v-on click handler with arguments   |
-| `vslot-named`     | Named slot                          |
-| `vel-props`       | Component element with props        |
-| `vsrc`            | Image src binding                   |
-| `vstyle`          | Inline style binding                |
-| `vstyle-obj`      | Inline style binding with objects   |
-| `vclass`          | Class binding                       |
-| `vclass-obj`      | Class binding with objects          |
-| `vclass-obj-mult` | Multiple conditional class bindings |
-| `vanim`           | Transition component with JS hooks  |
-| `vnuxtl`          | Nuxt Routing Link                   |
-| `vroutename`      | router-link Named Routing           |
-| `vroutenameparam` | router-link Named with Parameters   |
-| `vroutepath`      | router-link Path Routing Link       |
-| `vemit-child`     | Emit event from child component     |
-| `vemit-parent`    | Emit event to parent component      |
+| Prefix | Vuex Snippet Content |
+| ------ | ------------ |
+| `newVuexStore` | `const store = new Vuex.Store({ })` |
 
-### Script
+| Prefix | Nuxt.js Snippet Content |
+| ------ | ------------ |
+| `nuxt` | `<nuxt/>` |
+| `nuxtChild` | `<nuxt-child/>` |
+| `nuxtLink` | `<nuxt-link to=""/>` |
+| `asyncData` | `asyncData() {}` |
 
-| Snippet           | Purpose                                                                  |
-| ----------------- | ------------------------------------------------------------------------ |
-| `vdata`           | Component data as a function                                             |
-| `vmethod`         | Vue method                                                               |
-| `vcomputed`       | Vue computed property                                                    |
-| `vwatcher`        | Vue watcher with new and old value args                                  |
-| `vbeforecreate`   | beforeCreate lifecycle method                                            |
-| `vcreated`        | created lifecycle method                                                 |
-| `vbeforemount`    | beforeMount lifecycle method                                             |
-| `vmounted`        | vmounted lifecycle method                                                |
-| `vbeforeupdate`   | beforeUpdate lifecycle method                                            |
-| `vupdated`        | updated lifecycle method                                                 |
-| `vbeforedestroy`  | beforeDestroy lifecycle method                                           |
-| `vdestroyed`      | destroyed lifecycle method                                               |
-| `vprops`          | Props with type and default                                              |
-| `vimport`         | Import one component into another                                        |
-| `vimport-dynamic` | Import one component that should be lazy loaded by webpack               |
-| `vcomponents`     | Import one component into another within the export statement            |
-| `vimport-export`  | Import one component into another and use it within the export statement |
-| `vmapstate`       | import mapState from Vuex into vue component component                   |
-| `vmapgetters`     | import mapGetters from Vuex into vue component component                 |
-| `vmapmutations`   | import mapMutations from Vuex into vue component component               |
-| `vmapactions`     | import mapActions from Vuex into vue component component                 |
-| `vfilter`         | Vue filter                                                               |
-| `vmixin`          | Create a Vue Mixin                                                       |
-| `vmixin-use`      | Bring a mixin into a component to use                                    |
-| `vc-direct`       | Vue create a custom directive                                            |
-| `vimport-lib`     | Import a library                                                         |
-| `vimport-gsap`    | Import GreenSock                                                         |
-| `vanimhook-js`    | Using the Transition component JS hooks in methods                       |
-| `vcommit`         | Commit to Vuex store in methods for mutation                             |
-| `vdispatch`       | Dispatch to Vuex store in methods for action                             |
-| `vtest`           | A simple unit testing component                                          |
+### Supported languages
+* vue(.vue)
+* HTML(.html)
+* javascript(.js)
+* typescript(.ts)
+* pug(.pug)
 
-### Vue Composition API
-
-| Snippet             | Purpose                                               |
-| ------------------- | ----------------------------------------------------- |
-| `v3reactive`        | Vue Composition API - reactive                        |
-| `v3reactive-setup`  | Vue Composition API - reactive with setup boilerplate |
-| `v3computed`        | Vue Composition API - computed                        |
-| `v3watch`           | Vue Composition API - watcher single source           |
-| `v3watch-array`     | Vue Composition API - watch as array                  |
-| `v3watcheffect`     | Vue Composition API - watchEffect                     |
-| `v3ref`             | Vue Ref                                               |
-| `v3onmounted`       | Lifecycle hook - onMounted                            |
-| `v3onbeforemount`   | Lifecycle hook - onBeforeMount                        |
-| `v3onbeforeupdate`  | Lifecycle hook - onBeforeUpdate                       |
-| `v3onupdated`       | Lifecycle hook - onUpdated                            |
-| `v3onerrorcaptured` | Lifecycle hook - onErrorCaptured                      |
-| `v3onunmounted`     | Lifecycle hook - (destroyed) onUnmounted              |
-| `v3onbeforeunmount` | Lifecycle hook - (beforeDestroy) onBeforeUnmount      |
-| `v3useinoptions`    | Use Composition API in Options API                    |
-
-### Vuex
-
-| Snippet         | Purpose                        |
-| --------------- | ------------------------------ |
-| `vstore`        | Base for Vuex store.js         |
-| `vgetter`       | Vuex Getter                    |
-| `vmutation`     | Vuex Mutation                  |
-| `vaction`       | Vuex Action                    |
-| `vmodule`       | Vuex Module                    |
-| `vstore-import` | Import vuex store into main.js |
-| `vstore2`       | Updated Base for Vuex store    |
-
-### Vue Router
-
-| Snippet              | Purpose                                       |
-| -------------------- | --------------------------------------------- |
-| `vrouter`            | Vue Router base                               |
-| `vscrollbehavior`    | Vue Router scrollBehavior                     |
-| `vbeforeeach`        | Vue Router global guards beforeEach           |
-| `vbeforeresolve`     | Vue Router global guards beforeResolve        |
-| `vaftereach`         | Vue Router global guards afterEach            |
-| `vbeforeenter`       | Vue Router per-route guard beforeEnter        |
-| `vbeforerouteenter`  | Vue Router component guards beforeRouteEnter  |
-| `vbeforerouteupdate` | Vue Router component guards beforeRouteUpdate |
-| `vbeforerouteleave`  | Vue Router component guards beforeRouteLeave  |
-
-### Vue Config
-
-| Snippet   | Purpose                                                              |
-| --------- | -------------------------------------------------------------------- |
-| `vplugin` | Import a plugin to main.js or plugins file                           |
-| `vconfig` | vue.config.js file, example imports a sass file into every component |
-
-### Nuxt Config
-
-| Snippet | Purpose                                                 |
-| ------- | ------------------------------------------------------- |
-| `nfont` | link to include fonts in a nuxt project, in nuxt-config |
-| `ncss`  | link to css assets such as normalize                    |
-
-### Nuxt Page
-
-| Snippet           | Purpose                          |
-| ----------------- | -------------------------------- |
-| `nasyncdata`      | Nuxt asyncData                   |
-| `nasyncdataaxios` | Nuxt asyncData with Axios module |
-| `nfetch`          | Nuxt Fetch                       |
-| `nfetchaxios`     | Nuxt Fetch with Axios module     |
-| `nhead`           | Nuxt Head                        |
-| `nparam`          | Nuxt Route Params                |
-
-### Extra (plaintext)
-
-| Snippet     | Purpose                 |
-| ----------- | ----------------------- |
-| `gitignore` | .gitignore file presets |
-
-## Contributing
-
-This is an open source project open to anyone. Contributions are welcome [github](https://github.com/ly2011/frontend-snippets)
-
-If you are contributing a snippet, please be sure to add the documentation for it in the tables in the README, the pull request cannot be accepted without this addition. Thanks!
