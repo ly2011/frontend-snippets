@@ -1,0 +1,11 @@
+{
+  "vue": {
+    "prefix": "newVue",
+    "body": [
+      "new Vue({",
+      "\t$1",
+      "})"
+    ],
+    "description": "new Vue()"
+  }
+}

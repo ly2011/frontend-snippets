@@ -1,0 +1,18 @@
+{
+  "import": {
+    "prefix": "import",
+    "body": [
+      "import $1 from '$2'"
+    ],
+    "description": "import ... from ..."
+  },
+  "vue": {
+    "prefix": "newVue",
+    "body": [
+      "new Vue({",
+      "\t$1",
+      "})"
+    ],
+    "description": "new Vue()"
+  }
+}

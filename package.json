@@ -1,0 +1,59 @@
+{
+  "name": "frontend-snippets",
+  "displayName": "frontend-snippets",
+  "description": "frontend-snippets",
+  "version": "0.4.0",
+  "license": "MIT",
+  "publisher": "win",
+  "author": "ly2011",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ly2011/frontend-snippets.git"
+  },
+  "keywords": [
+    "Vue",
+    "Vue3",
+    "Vue2",
+    "Composition API",
+    "Vue Snippets",
+    "React",
+    "React Hooks"
+  ],
+  "categories": [
+    "Snippets"
+  ],
+  "scripts": {
+    "build": "vsce package -o frontend-snippets$npm_package_version.vsix",
+    "install": "yarn build && code --install-extension frontend-snippets$npm_package_version.vsix",
+    "prerelease": "yarn build",
+    "release": "vsce publish minor"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/vue.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue.json"
+      }
+    ]
+  }
+}
