@@ -112,3 +112,5 @@ package.json 文件图解
 
 - 错误4：vsce publish 成功，但是在 [https://marketplace.visualstudio.com/manage/publishers/win](https://marketplace.visualstudio.com/manage/publishers/win) 上没有真正发布成功，最终发现是 README.md 存在问题，但是没找到具体原因，故最好不要更改现有的 README.md 文件文案格式结构。
 具体错误：
+![image](https://user-images.githubusercontent.com/24327880/157480093-df029c0b-727b-49de-94c2-8a0092458626.png)
+
