@@ -1,5 +1,6 @@
 .vscode/**
 .vscode-test/**
+example/**
 .gitignore
 vsc-extension-quickstart.md
 release.md
