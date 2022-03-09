@@ -14,6 +14,10 @@
     "type": "git",
     "url": "https://github.com/ly2011/frontend-snippets.git"
   },
+  "bugs": {
+    "url": "https://github.com/ly2011/frontend-snippet/issues",
+    "email": "1518550424@qq.com"
+  },
   "keywords": [
     "Vue",
     "Vue3",
@@ -33,6 +37,32 @@
     "release": "vsce publish minor"
   },
   "contributes": {
+    "languages": [
+      {
+        "id": "vue",
+        "aliases": [
+          "Vue",
+          "vue"
+        ],
+        "extensions": [
+          ".vue"
+        ]
+      },
+      {
+        "id": "javascript",
+        "aliases": [
+          "Vue",
+          "vue"
+        ],
+        "extensions": [
+          ".js",
+          ".vue",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
     "snippets": [
       {
         "language": "javascript",
