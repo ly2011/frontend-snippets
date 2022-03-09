@@ -98,3 +98,17 @@ package.json 文件图解
 - contributes(白色区域): snippets配置项可设置language、以及aliases设置别名等等
 
 ![img](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12459fa45d41450e8f1666d64eb57f26~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp)
+
+## 7. 发版失败(vsce publish)常见的错误
+
+- 错误1：Error:Missing publisher name. Learn more:[https://code.visualstudio.com...](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publishing-extensions)
+解决方式：在package.json中将刚刚创建好的发布账号配置进去"publisher":"your name",
+
+- 错误2：Error:Make sure to edit the README.md file before you publish your extension
+解决方式：看下README.md文件中是否有http地址
+
+- 错误3：A ‘repository’field is missing from the 'package.josn' manifest file .Do you want to continue? [y/n]
+解决方式：y
+
+- 错误4：vsce publish 成功，但是在 [https://marketplace.visualstudio.com/manage/publishers/win](https://marketplace.visualstudio.com/manage/publishers/win) 上没有真正发布成功，最终发现是 README.md 存在问题，但是没找到具体原因，故最好不要更改现有的 README.md 文件文案格式结构。
+具体错误：
