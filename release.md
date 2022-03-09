@@ -114,3 +114,9 @@ package.json 文件图解
 具体错误：
 ![image](https://user-images.githubusercontent.com/24327880/157480093-df029c0b-727b-49de-94c2-8a0092458626.png)
 
+**最后找到的最终原因是！！！**
+想吐槽一下，官网没有任何一句话提到这个原因，报错信息也完全看不出原因。
+
+![image](https://user-images.githubusercontent.com/24327880/157482672-536bc441-3277-4ed9-b06f-804417bf3a5c.png)
+
+
