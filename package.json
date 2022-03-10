@@ -32,8 +32,6 @@
   ],
   "scripts": {
     "build": "vsce package -o frontend-snippets$npm_package_version.vsix",
-    "install": "yarn build && code --install-extension frontend-snippets$npm_package_version.vsix",
-    "prerelease": "yarn build",
     "release": "vsce publish minor"
   },
   "contributes": {
