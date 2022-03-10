@@ -8,11 +8,68 @@
     "description": "Log output to console"
   },
   "import": {
-    "prefix": "import",
+    "prefix": ["import", "imp"],
     "body": [
-      "import $1 from '$2'"
+      "import ${2:moduleName} from '${1:module}'"
     ],
     "description": "import ... from ..."
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": [
+      "import { $2 } from '${1:module}'"
+    ],
+    "description": "Imports only a portion of the module in ES6 syntax"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}'",
+    "description": "Imports everything as alias from the module in ES6 syntax"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'",
+    "description": "Imports a specific portion of the module by assigning a local alias in ES6 syntax"
+  },
+  "exportNamedVariable": {
+    "prefix": "env",
+    "body": "export const ${1:exportVariable} = ${2:localVariable}\n",
+    "description": "Export named variable in ES6 syntax"
+  },
+  "exportNamedFunction": {
+    "prefix": "enf",
+    "body": "export const ${1:functionName} = (${2:params}) => {\n\t$0\n}\n",
+    "description": "Export named function in ES6 syntax"
+  },
+  "exportDefaultFunction": {
+    "prefix": "edf",
+    "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}) {\n\t$0\n}\n",
+    "description": "Export default function in ES6 syntax"
+  },
+  "exportClass": {
+    "prefix": "ecl",
+    "body": "export default class ${1:className} {\n\t$0\n}\n",
+    "description": "Export default class in ES6 syntax"
+  },
+  "forEach": {
+    "prefix": "fre",
+    "body": "${1:array}.forEach(${2:item} => {\n\t${0}\n})",
+    "description": "Creates a forEach statement in ES6 syntax"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": "for (const ${1:item} of ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property names of iterable objects"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": "for (const ${1:item} in ${2:object}) {\n\t${0}\n}",
+    "description": "Iterating over property values of iterable objects"
+  },
+  "promise": {
+    "prefix": "prom",
+    "body": "return new Promise((resolve, reject) => {\n\t${1}\n})",
+    "description": "Creates and returns a new Promise in the standard ES6 syntax"
   },
   "vue": {
     "prefix": "newVue",
