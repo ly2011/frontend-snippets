@@ -23,11 +23,8 @@ jobs:
       - name: Install the dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install vsce
-        run: npm i -g vsce
-
-      - name: vsce login
-        run: vsce login ${{ secrets.VSCE_ACCOUNT }}
-      
-      - name: Publish
-        run: vsce publish patch -p ${{ secrets.VSCE_PAT }}
+      - uses: lannonbr/vsce-action@3.0.0
+        with:
+          args: "publish -p $VSCE_PAT"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
