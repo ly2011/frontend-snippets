@@ -16,25 +16,15 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      
+      - name: Install yarn
+        run: npm install -g yarn
 
-      - name: Install the vsce npm package
-        run: |
-          npm install
-          npm install -g vsce
-      - name: Package the extension pack
-        run: |
-          vsce package
-          vsce publish patch -p ${{ secrets.VSCE_PAT }}
+      - name: Install the dependencies
+        run: yarn install --frozen-lockfile
 
-          
-      # - name: Install yarn
-      #   run: npm install -g yarn
-
-      # - name: Install the dependencies
-      #   run: yarn install --frozen-lockfile
-
-      # - uses: lannonbr/vsce-action@3.0.0
-      #   with:
-      #     args: "publish patch -p $VSCE_PAT"
-      #   env:
-      #     VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - uses: lannonbr/vsce-action@3.0.0
+        with:
+          args: "publish minor -p $VSCE_PAT"
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
