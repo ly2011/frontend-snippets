@@ -25,6 +25,6 @@ jobs:
 
       - uses: lannonbr/vsce-action@3.0.0
         with:
-          args: "publish -p $VSCE_PAT"
+          args: "publish patch -p $VSCE_PAT"
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
