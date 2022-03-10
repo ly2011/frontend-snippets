@@ -59,6 +59,18 @@
           ".ts",
           ".tsx"
         ]
+      },
+      {
+        "id": "javascript",
+        "aliases": [
+          "React"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     ],
     "snippets": [
@@ -81,6 +93,14 @@
       {
         "language": "vue",
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/react.json"
       }
     ]
   }
