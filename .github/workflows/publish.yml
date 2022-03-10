@@ -16,9 +16,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      
+      - name: Install yarn
+        run: npm install -g yarn
 
       - name: Install the dependencies
-        run: npm i
+        run: yarn install --frozen-lockfile
 
       - name: Install vsce
         run: npm i -g vsce
