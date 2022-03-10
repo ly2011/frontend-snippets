@@ -160,7 +160,7 @@
     "body": [
       "useEffect(() => {",
       "\t$1",
-      "}, []"
+      "}, [])"
     ],
     "description": "useEffect Hook"
   }
