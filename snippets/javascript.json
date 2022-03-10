@@ -1,4 +1,12 @@
 {
+  "Print to console": {
+    "prefix": "log",
+    "body": [
+      "console.log('${1:$TM_SELECTED_TEXT}')",
+      "$2"
+    ],
+    "description": "Log output to console"
+  },
   "import": {
     "prefix": "import",
     "body": [
